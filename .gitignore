@@ -1,0 +1,7 @@
+# Generated files
+app/scripts/
+app/styles/
+
+# Tool generated files
+node_modules/
+.sass-cache/
