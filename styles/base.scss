@@ -16,7 +16,7 @@ html, body {
 }
 
 .wrapper {
-	border: 1px solid #bbb;
+	border: 1px solid #eee;
 	height: 50%;
 	@include apply-to(medium-and-above) {
 		display: inline-block;
