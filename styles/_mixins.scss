@@ -1,0 +1,17 @@
+$break-small: 30em;
+$break-large: 60em;
+
+@mixin apply-to($media) {
+  @if $media == small-screen {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small) and (max-width: $break-large) { @content; }
+  }
+  @else if $media == medium-and-above {
+    @media only screen and (min-width: $break-small) { @content; }
+  }
+  @else if $media == large-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
