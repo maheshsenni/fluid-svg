@@ -33,6 +33,7 @@
     "gulp-streamify": "0.0.5",
     "gulp-minify-css": "^0.3.10",
     "gulp-ruby-sass": "^0.7.1",
-    "gulp-autoprefixer": "^1.0.1"
+    "gulp-autoprefixer": "^1.0.1",
+    "d3": "^3.4.11"
   }
 }

@@ -21,7 +21,7 @@ var paths = {
 	'main_script': 'main.js'
 };
 
-gulp.task('js', ['clean'], function() {
+gulp.task('js', ['clean-js'], function() {
 	'use strict';
   return browserify(paths.js_dir + paths.main_script)
     .bundle()
@@ -37,7 +37,7 @@ gulp.task('js', ['clean'], function() {
 
 gulp.task('sass', ['clean-css'], function() {
 	'use strict';
-	return gulp.src('styles/main.scss')
+	return gulp.src('styles/base.scss')
 		.pipe(sass({ sourcemap: false, style: 'expanded'}))
 		.pipe(autoprefixer())
 		.pipe(minifycss())
