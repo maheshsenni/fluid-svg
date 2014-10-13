@@ -19,12 +19,22 @@ module.exports = {
     var g = selection.append("g")
       .attr("transform", "translate(50, 50)");
 
-    var background = g.append("path")
+    var rotateCycle = function () {
+      console.timeEnd("Rotation");
+      console.time("Rotation");
+      d3.select(this).transition()
+        .duration(5000)
+        .attrTween("transform", function () { return d3.interpolateString("rotate(0)", "rotate(360)"); })
+        .each("end", rotateCycle);
+    };    
+    var rotationG = g.append("g").each(rotateCycle);
+
+    var background = rotationG.append("path")
       .datum({endAngle: 2 * Math.PI})
       .style("fill", "#7f8c8d")
       .attr("d", arc);
 
-    var foreground = g.append("path")
+    var foreground = rotationG.append("path")
       .datum({endAngle: .4 * 2 * Math.PI})
       .style("fill", "#3498db")
       .attr("d", arc);

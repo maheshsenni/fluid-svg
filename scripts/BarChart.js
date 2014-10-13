@@ -5,7 +5,6 @@ var d3 = require('d3');
 module.exports = {
 	render: function (selector, data) {
 		'use strict';
-		console.log(data);
 		var selection = d3.select(selector);
 
 		if (!selection) {
